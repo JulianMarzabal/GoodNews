@@ -13,8 +13,12 @@ struct Constants {
     static let APIKey = "700f2779a1fe4850b73f96253534617f"
     static let BaseUrl = "https://newsapi.org"
 }
+protocol APIProtocol{
+    func getNews(completion: @escaping (Result<[News],Error>) -> Void)
+    
+}
 
-class APICaller {
+class APICaller:APIProtocol {
     static let shared = APICaller()
     
     func getNews(completion: @escaping (Result<[News],Error>) -> Void) {
