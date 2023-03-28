@@ -8,11 +8,23 @@
 import UIKit
 import Alamofire
 
+
+
 class NewsViewController: UIViewController {
     
-    public var goodNews: [News] = [News]()
+    var viewmodel: NewsViewModel
     
-    private let TableView: UITableView = {
+    init(viewmodel: NewsViewModel) {
+        self.viewmodel = viewmodel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //public var goodNews: [News] = [News]()
+    
+     lazy var  TableView: UITableView = {
         let tableView = UITableView()
         tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
         return tableView
@@ -27,32 +39,25 @@ class NewsViewController: UIViewController {
         view.addSubview(TableView)
         TableView.delegate = self
         TableView.dataSource = self
-        TableView.reloadData()
-        
-        
-        getNews()
-        
+        viewmodel.getNews()
+        bindReaction()
     }
+    
+    func bindReaction(){
+        viewmodel.onSuccessfulUpdateReaction = { [weak self] in
+            DispatchQueue.main.async {
+                self?.TableView.reloadData()
+            }
+        }
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         TableView.frame = view.bounds
         
     }
     
-    private func getNews(){
-        APICaller.shared.getNews { [weak self ]  results in
-            switch results {
-            case .success(let News):
-                self?.goodNews = News
-                DispatchQueue.main.async {
-                    self?.TableView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-            
-        }
-    }
+  
 
 
 }
@@ -61,14 +66,15 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goodNews.count
+        return viewmodel.newsViewModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell else {return UITableViewCell()}
-            
-        cell.titleNews.text = goodNews[indexPath.row].title
-        cell.descriptionNews.text = goodNews[indexPath.row].description
+        let news = viewmodel.newsViewModel[indexPath.row]
+        cell.configure(with: news)
+        //cell.titleNews.text = goodNews[indexPath.row].title
+        //cell.descriptionNews.text = goodNews[indexPath.row].description
         
         
         
@@ -83,11 +89,6 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("apretaste el \(indexPath.row)")
-        let infoVC = infoViewController()
-        infoVC.modalPresentationStyle = .overFullScreen
-        present(infoVC, animated: true)
-        infoVC.titleNews.text = goodNews[indexPath.row].title
-        infoVC.label.text = goodNews[indexPath.row].content
+        viewmodel.selectNewsBy(index: indexPath.row)
     }
 }

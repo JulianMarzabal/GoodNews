@@ -71,4 +71,9 @@ class NewsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(titleNewsConstraints)
         NSLayoutConstraint.activate(descriptionNewsConstraints)
     }
+    
+    func configure(with data: NewsModel){
+        titleNews.text = data.title
+        descriptionNews.text = data.description
+    }
 }

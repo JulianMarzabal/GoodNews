@@ -10,6 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var coordinator: MainCoordinator?
     
     
 
@@ -17,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = HomeViewController()
+        let viewController = UIViewController()
+        let navController = UINavigationController(rootViewController: viewController)
+        let coordinator = MainCoordinator(navigationController: navController)
+      
         window.makeKeyAndVisible()
         self.window = window
+        self.coordinator = coordinator
         
         return true
     }
