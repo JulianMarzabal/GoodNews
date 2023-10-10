@@ -24,13 +24,7 @@ class MainCoordinator {
         let vm = NewsViewModel()
         vm.delegate = self
         let newsVC = NewsViewController(viewmodel: vm)
-        
-        
-        
-        
-       
-        
-        
+    
         navigationController.pushViewController(newsVC, animated: true)
     }
     func onInfoView(news:News) {

@@ -16,7 +16,7 @@ class NewsTableViewCell: UITableViewCell {
      let titleNews: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         
          label.numberOfLines = 0
        
@@ -34,6 +34,7 @@ class NewsTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 14)
         
         return label
     }()

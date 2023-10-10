@@ -44,8 +44,8 @@ class infoViewController: UIViewController {
         label.text = viewModel.news.description
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = .monospacedDigitSystemFont(ofSize: 18, weight: .light)
-        label.backgroundColor = .systemGray3
+        label.font = .monospacedDigitSystemFont(ofSize: 16, weight: .light)
+        label.backgroundColor = .systemGray6
         label.contentMode = .scaleAspectFit
         label.textColor = .black
         
