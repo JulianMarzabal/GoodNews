@@ -13,7 +13,7 @@ class NewsTableViewCell: UITableViewCell {
     
     
     
-     let titleNews: UILabel = {
+     private var  titleNews: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .bold)
@@ -28,7 +28,7 @@ class NewsTableViewCell: UITableViewCell {
         return label
     }()
     
-    let descriptionNews: UILabel = {
+    private var descriptionNews: UILabel = {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -38,11 +38,19 @@ class NewsTableViewCell: UITableViewCell {
         
         return label
     }()
+    private var separator:UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .gray
+        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        return view
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titleNews)
         contentView.addSubview(descriptionNews)
+        contentView.addSubview(separator)
         setConstraints()
     }
     
@@ -55,22 +63,22 @@ class NewsTableViewCell: UITableViewCell {
             titleNews.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             titleNews.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
             titleNews.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -15),
-            
-            
-            
+
         ]
         let descriptionNewsConstraints = [
             descriptionNews.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 15),
             descriptionNews.topAnchor.constraint(equalTo: titleNews.bottomAnchor,constant: 3),
             descriptionNews.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -15),
             descriptionNews.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -20),
-            
-            
-           
-        
+        ]
+        let SeaparatorConstraints = [
+            separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         ]
         NSLayoutConstraint.activate(titleNewsConstraints)
         NSLayoutConstraint.activate(descriptionNewsConstraints)
+        NSLayoutConstraint.activate(SeaparatorConstraints)
     }
     
     func configure(with data: NewsModel){

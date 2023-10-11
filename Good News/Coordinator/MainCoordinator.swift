@@ -14,12 +14,6 @@ class MainCoordinator {
         self.navigationController = navigationController
     }
     
-    func start() {
-        let vc = HomeViewController()
-        vc.delegate = self
-        navigationController.pushViewController(vc, animated: true)
-        
-    }
     func onNewsView() {
         let vm = NewsViewModel()
         vm.delegate = self
@@ -33,15 +27,16 @@ class MainCoordinator {
         print("onInfoView")
         navigationController.pushViewController(infoVC, animated: true)
     }
-
-}
-
-
-extension MainCoordinator: HomeViewProtocol {
-    func onSuccess() {
-        onNewsView()
+    func onNewsTabBar() {
+        let tab = TabBarViewController()
+        tab.neswVCDelegate = self
+        navigationController.pushViewController(tab, animated: true)
     }
+
 }
+
+
+
 
 extension MainCoordinator: NewsViewDelegate {
     func showInfoNews(news: News) {
@@ -51,7 +46,6 @@ extension MainCoordinator: NewsViewDelegate {
         
     }
     
-  
-    
-    
+
 }
+

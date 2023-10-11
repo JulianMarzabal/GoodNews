@@ -11,7 +11,7 @@ import Alamofire
 
 
 class NewsViewController: UIViewController {
-    
+
     var viewmodel: NewsViewModel
     
     init(viewmodel: NewsViewModel) {
@@ -22,7 +22,6 @@ class NewsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //public var goodNews: [News] = [News]()
     
      lazy var  TableView: UITableView = {
         let tableView = UITableView()
@@ -54,12 +53,9 @@ class NewsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         TableView.frame = view.bounds
-        
+    
     }
     
-  
-
-
 }
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,12 +69,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell else {return UITableViewCell()}
         let news = viewmodel.newsViewModel[indexPath.row]
         cell.configure(with: news)
-        //cell.titleNews.text = goodNews[indexPath.row].title
-        //cell.descriptionNews.text = goodNews[indexPath.row].description
-        
-        
-        
-        
+
         return cell
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

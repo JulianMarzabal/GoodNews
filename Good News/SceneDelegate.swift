@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navController
         window.makeKeyAndVisible()
-        coordinator.start()
+        coordinator.onNewsTabBar()
         self.window = window
         self.coordinator = coordinator
     }

@@ -10,13 +10,12 @@ import UIKit
 
 protocol infoViewControllerDelegate: AnyObject {
     func onView()
+    func onSelect(model: FavouriteNewsModel, isSelectected: Bool)
 }
 
 class infoViewController: UIViewController {
     weak var delegate: infoViewControllerDelegate?
-    
     var viewModel: InfoViewModel
-    
     init(viewModel: InfoViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -61,6 +60,31 @@ class infoViewController: UIViewController {
         
         return imageView
     }()
+    
+    lazy var favouriteButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(systemName: "star.fill",withConfiguration: UIImage.SymbolConfiguration(pointSize: 35))
+        
+        button.setImage(image, for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(saveNews), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    lazy var favouriteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Save this news:"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.backgroundColor = .systemGray6
+        label.contentMode = .scaleAspectFit
+        label.textColor = .black
+        
+        return label
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,13 +100,24 @@ class infoViewController: UIViewController {
         view.backgroundColor = .systemGray6
         view.addSubview(label)
         view.addSubview(titleNews)
- 
         view.addSubview(imageView)
+        view.addSubview(favouriteLabel)
+        view.addSubview(favouriteButton)
         
     }
-
- 
     
+    @objc func saveNews() {
+      
+        let newsId = viewModel.news.title 
+        let isSelected = !viewModel.newsSelected.contains { $0.title == newsId }
+
+        viewModel.updateNews(title: newsId, isSelected: isSelected)
+        
+        let buttonColor: UIColor = isSelected ? .systemYellow : .black
+           favouriteButton.tintColor = buttonColor
+    }
+
+         
     
     private func setContraints(){
         NSLayoutConstraint.activate([
@@ -101,6 +136,15 @@ class infoViewController: UIViewController {
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
+            favouriteLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
+            favouriteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+
+            
+            favouriteButton.topAnchor.constraint(equalTo: favouriteLabel.topAnchor),
+            favouriteButton.leadingAnchor.constraint(equalTo: favouriteLabel.trailingAnchor,constant: 5),
+            favouriteButton.centerYAnchor.constraint(equalTo: favouriteLabel.centerYAnchor),
+           
+            
             
             
             
@@ -108,7 +152,16 @@ class infoViewController: UIViewController {
         
         ])
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.onSuccessfulUpdateReaction = { [weak self] in
+            DispatchQueue.main.async {
+                self?.setupUI()
+            }
+            
+        
+        }
+    }
     func setImage() {
         guard let url = URL(string: viewModel.news.urlToImage ?? "") else {return}
         imageView.sd_setImage(with: url)
