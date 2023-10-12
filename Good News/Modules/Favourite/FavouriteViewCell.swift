@@ -22,7 +22,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
      var favouriteLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-         label.font = .systemFont(ofSize: 12)
+         label.font = .systemFont(ofSize: 18)
         label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,9 +31,17 @@ class FavouriteNewsTableViewCell: UITableViewCell {
        let label = UILabel()
        label.numberOfLines = 0
        label.text = ""
+        label.font = .systemFont(ofSize: 14)
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
    }()
+    private var separator:UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemRed
+        view.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        return view
+    }()
     
     func configure(data: FavouriteNewsTableViewModel){
         favouriteLabel.text = data.title
@@ -45,6 +53,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(favouriteLabel)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(separator)
         setConstrainsts()
    
        
@@ -55,12 +64,16 @@ class FavouriteNewsTableViewCell: UITableViewCell {
     func setConstrainsts() {
         NSLayoutConstraint.activate([
             favouriteLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            favouriteLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            favouriteLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            favouriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            favouriteLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
+            favouriteLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 15),
+            favouriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -15),
             
-            descriptionLabel.centerYAnchor.constraint(equalTo: favouriteLabel.centerYAnchor,constant: -30),
-            descriptionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: favouriteLabel.bottomAnchor, constant: 10),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         ])
     }
  

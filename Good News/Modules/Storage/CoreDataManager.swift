@@ -35,6 +35,19 @@ class CoreDataManager {
         }
     }
     func SaveNews(news:News) {
+        
+        let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title == %@", news.title)
+        
+        do {
+            let existingNewsEntities = try context.fetch(fetchRequest)
+          
+            if let existingEntity = existingNewsEntities.first {
+                return
+            }
+        } catch {
+            print("Error trying to get news: \(error)")
+        }
         let newEntity = Entity(context: context)
         newEntity.title = news.title
         newEntity.text = news.description
@@ -45,6 +58,16 @@ class CoreDataManager {
             print("Error")
         }
     }
+    
+    func deleteNews(entity: Entity) {
+            context.delete(entity)
+            
+            do {
+                try context.save()
+            } catch {
+                print("Error trying to elminate core data  \(error)")
+            }
+        }
     
     
   

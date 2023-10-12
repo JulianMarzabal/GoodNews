@@ -41,14 +41,10 @@ class FavouriteViewController: UIViewController {
     }()
 
    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewmodel.showFavouriteNews()
-        print(" las news favourite\(viewmodel.newsFavourite)")
-
-       
+        tableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -68,7 +64,8 @@ class FavouriteViewController: UIViewController {
     
     private func setConstraints() {
         let labelConstraints = [
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -250),
+            //label.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -50),
+            label.topAnchor.constraint(equalTo: view.topAnchor,constant: 120),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         let tableViewConstraints = [
@@ -94,6 +91,9 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
         
         
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let title = viewmodel.newsFavourite[indexPath.row].title
@@ -104,15 +104,20 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+        
     }
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
+    /*func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _,_, completion in
-          
+            let newsToDelete = self.viewmodel.newsFavourite[indexPath.row]
            // NewsStorage.shared.news.remove(at: indexPath.row)
+            self.viewmodel.eliminateFavouriteNews(entity: newsToDelete)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.reloadData()
+           // tableView.reloadData()
             completion(true)
         }
         deleteAction.image = UIImage(systemName: "trash")
@@ -120,7 +125,27 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
         
         let config = UISwipeActionsConfiguration(actions: [deleteAction])
         return config
+    }*/
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let newsEntityToDelete = self.viewmodel.newsFavourite[indexPath.row]
+        self.viewmodel.eliminateFavouriteNews(entity: newsEntityToDelete)
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
+            guard let self = self else { return }
+            
+            
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            //tableView.reloadData()
+            completion(true)
+        }
+        
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemRed
+        
+        let config = UISwipeActionsConfiguration(actions: [deleteAction])
+        return config
     }
+
     
 }
 

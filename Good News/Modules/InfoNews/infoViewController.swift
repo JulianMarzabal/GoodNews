@@ -108,15 +108,21 @@ class infoViewController: UIViewController {
     
     @objc func saveNews() {
         let newsFavourite = viewModel.news
-        let newsId = viewModel.news.title
-        let isSelected = !viewModel.newsSelected.contains { $0.title == newsId }
-
-        viewModel.updateNews(title: newsId, isSelected: isSelected)
+ 
+       //viewModel.updateNews(title: newsId, isSelected: isSelected)
         viewModel.saveNews(news: newsFavourite)
-        
-        
-        let buttonColor: UIColor = isSelected ? .systemYellow : .black
+       // var isSelected = viewModel.isSelectect
+        let buttonColor: UIColor = viewModel.isSelectect ? .systemYellow : .black
            favouriteButton.tintColor = buttonColor
+        if viewModel.isSelectect {
+            viewModel.saveNews(news: newsFavourite)
+        } else {
+            print("eliminar newww")
+        }
+        
+    
+        
+        
     }
 
          

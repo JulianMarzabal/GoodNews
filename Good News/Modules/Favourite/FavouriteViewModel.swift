@@ -25,4 +25,11 @@ class FavouriteViewModel {
         
     }
     
+    func eliminateFavouriteNews(entity: Entity) {
+        coreData.deleteNews(entity: entity)
+        if let index = newsFavourite.firstIndex(where: { $0 == entity }) {
+                    newsFavourite.remove(at: index)
+                }
+    }
+    
 }
