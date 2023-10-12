@@ -48,7 +48,6 @@ class FavouriteViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        favouriteNews = NewsStorage.shared.news
         view.backgroundColor = .white
         tableView.removeFromSuperview()
         label.removeFromSuperview()

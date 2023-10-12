@@ -7,14 +7,12 @@
 
 import Foundation
 class NewsStorage {
-    static var shared: NewsStorage = .init()
-    var news: [News] = [] {
-        didSet {
-            news.first?.title
-            news.first?.description
-         
-            
+    static var shared: NewsStorage = NewsStorage()
+   
+    var isSelected:Bool = false
+    private init() {
+            // Constructor privado para asegurar que no se puedan crear instancias fuera de la clase
         }
         
-    }
+    
 }

@@ -39,6 +39,9 @@ class NewsViewController: UIViewController {
         TableView.delegate = self
         TableView.dataSource = self
         viewmodel.getNews()
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
         bindReaction()
     }
     

@@ -11,28 +11,35 @@ import Foundation
 class InfoViewModel {
     var news:News
     private let coreData = CoreDataManager.shared
+    private let storage = NewsStorage.shared
     init(news: News) {
         self.news = news
+        
     
     }
-    private (set) var newsSelected: [News] = NewsStorage.shared.news {
-        didSet{
-            NewsStorage.shared.news = newsSelected
-            
+    
+    var isSelected: Bool = false {
+        didSet {
+            storage.isSelected = isSelected
         }
     }
+    
+    
     var onSuccessfulUpdateReaction:  (() -> Void)?
-    var isSelectect:Bool = false
+    
     
     
     func saveNews(news:News) {
+        
         coreData.SaveNews(news: news)
         print("Se ejecuto este codigo")
-        isSelectect = true
+        
         
     }
     func delateNews(entity:Entity){
+        isSelected = false
         coreData.deleteNews(entity: entity)
+        
     }
     
 }

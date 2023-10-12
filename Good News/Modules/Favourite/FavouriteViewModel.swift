@@ -8,7 +8,7 @@
 import Foundation
 
 class FavouriteViewModel {
-    var newsFavourite: [Entity] = []
+    public var newsFavourite: [Entity] = []
     
     let coreData = CoreDataManager.shared
     
