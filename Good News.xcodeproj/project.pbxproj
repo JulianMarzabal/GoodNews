@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E1244AA29CA77550031B121 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1244A929CA77550031B121 /* SDWebImage */; };
 		1E1244AC29CA77550031B121 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1244AB29CA77550031B121 /* SDWebImageMapKit */; };
+		1E14A8612AD774E000AC7518 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E14A85F2AD774E000AC7518 /* CoreData.xcdatamodeld */; };
+		1E14A8632AD775C400AC7518 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14A8622AD775C400AC7518 /* CoreDataManager.swift */; };
 		1E3525FD28F4DB06001491F6 /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3525FC28F4DB06001491F6 /* infoViewController.swift */; };
 		1E451E2A29D26D9800BAC231 /* NewsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E451E2929D26D9800BAC231 /* NewsViewModelTests.swift */; };
 		1E451E3129D26E7300BAC231 /* NewsViewDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E451E3029D26E7300BAC231 /* NewsViewDelegateMock.swift */; };
@@ -24,7 +26,7 @@
 		1EDA83AD2AD60F6900603232 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA83AC2AD60F6900603232 /* FavouriteViewController.swift */; };
 		1EDA83AF2AD6220C00603232 /* FavouriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA83AE2AD6220C00603232 /* FavouriteViewCell.swift */; };
 		1EDA83B22AD6228E00603232 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA83B12AD6228E00603232 /* Storage.swift */; };
-		1EDA83B42AD6237E00603232 /* FavouriteNewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA83B32AD6237E00603232 /* FavouriteNewsCellViewModel.swift */; };
+		1EDA83B42AD6237E00603232 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA83B32AD6237E00603232 /* FavouriteViewModel.swift */; };
 		1EDA83B62AD6264B00603232 /* FavouriteNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA83B52AD6264B00603232 /* FavouriteNewsModel.swift */; };
 		1EFE114928F301A5002C0CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE114828F301A5002C0CC1 /* AppDelegate.swift */; };
 		1EFE114B28F301A5002C0CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE114A28F301A5002C0CC1 /* SceneDelegate.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E14A8602AD774E000AC7518 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		1E14A8622AD775C400AC7518 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1E3525FC28F4DB06001491F6 /* infoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
 		1E451E2729D26D9800BAC231 /* Good NewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Good NewsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E451E2929D26D9800BAC231 /* NewsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelTests.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		1EDA83AC2AD60F6900603232 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		1EDA83AE2AD6220C00603232 /* FavouriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewCell.swift; sourceTree = "<group>"; };
 		1EDA83B12AD6228E00603232 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		1EDA83B32AD6237E00603232 /* FavouriteNewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteNewsCellViewModel.swift; sourceTree = "<group>"; };
+		1EDA83B32AD6237E00603232 /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
 		1EDA83B52AD6264B00603232 /* FavouriteNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteNewsModel.swift; sourceTree = "<group>"; };
 		1EFE114528F301A5002C0CC1 /* Good News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EFE114828F301A5002C0CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,7 +190,7 @@
 			children = (
 				1EDA83AC2AD60F6900603232 /* FavouriteViewController.swift */,
 				1EDA83AE2AD6220C00603232 /* FavouriteViewCell.swift */,
-				1EDA83B32AD6237E00603232 /* FavouriteNewsCellViewModel.swift */,
+				1EDA83B32AD6237E00603232 /* FavouriteViewModel.swift */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";
@@ -196,6 +200,7 @@
 			children = (
 				1EDA83B12AD6228E00603232 /* Storage.swift */,
 				1EDA83B52AD6264B00603232 /* FavouriteNewsModel.swift */,
+				1E14A8622AD775C400AC7518 /* CoreDataManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				1EFE115128F301A5002C0CC1 /* Assets.xcassets */,
 				1EFE115328F301A5002C0CC1 /* LaunchScreen.storyboard */,
 				1EFE115628F301A5002C0CC1 /* Info.plist */,
+				1E14A85F2AD774E000AC7518 /* CoreData.xcdatamodeld */,
 			);
 			path = "Good News";
 			sourceTree = "<group>";
@@ -418,7 +424,9 @@
 			files = (
 				1EDA83AF2AD6220C00603232 /* FavouriteViewCell.swift in Sources */,
 				1EFE116728F34186002C0CC1 /* NewsModel.swift in Sources */,
-				1EDA83B42AD6237E00603232 /* FavouriteNewsCellViewModel.swift in Sources */,
+				1E14A8612AD774E000AC7518 /* CoreData.xcdatamodeld in Sources */,
+				1E14A8632AD775C400AC7518 /* CoreDataManager.swift in Sources */,
+				1EDA83B42AD6237E00603232 /* FavouriteViewModel.swift in Sources */,
 				1EDA83A82AD60DF000603232 /* TabBarController.swift in Sources */,
 				1ED6CDD3296B65B100B664DB /* MyNewsModel.swift in Sources */,
 				1ED6CDD5296B727D00B664DB /* InfoViewModel.swift in Sources */,
@@ -733,6 +741,19 @@
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		1E14A85F2AD774E000AC7518 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E14A8602AD774E000AC7518 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 1E14A8602AD774E000AC7518 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1EFE113D28F301A5002C0CC1 /* Project object */;
 }

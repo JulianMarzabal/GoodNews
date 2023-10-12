@@ -9,7 +9,15 @@
 import UIKit
 
 class FavouriteViewController: UIViewController {
+    var viewmodel: FavouriteViewModel
+    init(viewmodel: FavouriteViewModel) {
+        self.viewmodel = viewmodel
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     let favouriteNewsTableViewCell = FavouriteNewsTableViewCell()
     var favouriteNews: [News] = []
  
@@ -24,6 +32,7 @@ class FavouriteViewController: UIViewController {
     private let label: UILabel = {
         let label = UILabel()
         label.text = "News Favourite"
+       
         label.backgroundColor = .white
         label.font = .systemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,8 +44,9 @@ class FavouriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+      
+        viewmodel.showFavouriteNews()
+        print(" las news favourite\(viewmodel.newsFavourite)")
 
        
     }
@@ -62,8 +72,8 @@ class FavouriteViewController: UIViewController {
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         let tableViewConstraints = [
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 4),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -4),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.topAnchor.constraint(equalTo: label.bottomAnchor,constant: 10)
         ]
@@ -79,29 +89,28 @@ class FavouriteViewController: UIViewController {
 }
 extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NewsStorage.shared.news.count
+       //return NewsStorage.shared.news.count
+        return viewmodel.newsFavourite.count
         
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let title = favouriteNews[indexPath.row].title
-        guard let description = favouriteNews[indexPath.row].description else {
-            return UITableViewCell()
-        }
+        let title = viewmodel.newsFavourite[indexPath.row].title
+        let description = viewmodel.newsFavourite[indexPath.row].text
         
         let cell = tableView.dequeueReusableCell(withIdentifier: FavouriteNewsTableViewCell.identifier, for: indexPath) as! FavouriteNewsTableViewCell
-        cell.configure(data: .init(title: title, description: description))
+        cell.configure(data: .init(title: title ?? "", description: description ?? ""))
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 140
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { _,_, completion in
           
-            NewsStorage.shared.news.remove(at: indexPath.row)
+           // NewsStorage.shared.news.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
             completion(true)

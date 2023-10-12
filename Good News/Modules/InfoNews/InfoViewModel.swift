@@ -12,7 +12,7 @@ import Foundation
 
 class InfoViewModel {
     var news:News
-    
+    private let coreData = CoreDataManager.shared
     init(news: News) {
         self.news = news
     
@@ -61,6 +61,10 @@ class InfoViewModel {
         }
     }
     
+    func saveNews(news:News) {
+        coreData.SaveNews(news: news)
+        print("Se ejecuto este codigo")
+    }
     
     
 }

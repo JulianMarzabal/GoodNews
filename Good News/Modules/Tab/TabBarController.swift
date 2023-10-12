@@ -21,8 +21,8 @@ class TabBarViewController: UITabBarController{
         let newsViewModel = NewsViewModel()
         newsViewModel.delegate = self
         let vc1 = NewsViewController(viewmodel: newsViewModel)
-       
-        let vc2 = FavouriteViewController()
+       let vm2 = FavouriteViewModel()
+        let vc2 = FavouriteViewController(viewmodel: vm2)
        
         vc1.navigationItem.largeTitleDisplayMode = .always
         vc2.navigationItem.largeTitleDisplayMode = .always
