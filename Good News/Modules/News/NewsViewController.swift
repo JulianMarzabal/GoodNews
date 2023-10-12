@@ -34,10 +34,11 @@ class NewsViewController: UIViewController {
        
         view.backgroundColor = .systemGray6
         title = "News"
-        
+        self.tabBarController?.tabBar.barTintColor = .white
         view.addSubview(TableView)
         TableView.delegate = self
         TableView.dataSource = self
+        TableView.tintColor = .white
         viewmodel.getNews()
        
     }

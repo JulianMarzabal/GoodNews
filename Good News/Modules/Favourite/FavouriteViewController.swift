@@ -33,7 +33,7 @@ class FavouriteViewController: UIViewController {
         let label = UILabel()
         label.text = "News Favourite"
        
-        label.backgroundColor = .white
+        label.backgroundColor = .systemGray6
         label.font = .systemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         

@@ -51,6 +51,7 @@ class NewsTableViewCell: UITableViewCell {
         contentView.addSubview(titleNews)
         contentView.addSubview(descriptionNews)
         contentView.addSubview(separator)
+        contentView.backgroundColor = .white
         setConstraints()
     }
     

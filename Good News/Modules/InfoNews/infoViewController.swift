@@ -63,7 +63,7 @@ class infoViewController: UIViewController {
     
     lazy var favouriteButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(systemName: "star.fill",withConfiguration: UIImage.SymbolConfiguration(pointSize: 35))
+        let image = UIImage(systemName: "star.fill",withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         
         button.setImage(image, for: .normal)
         button.tintColor = .black
@@ -143,16 +143,10 @@ class infoViewController: UIViewController {
             favouriteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
 
             
-            favouriteButton.topAnchor.constraint(equalTo: favouriteLabel.topAnchor),
+           // favouriteButton.topAnchor.constraint(equalTo: favouriteLabel.topAnchor),
             favouriteButton.leadingAnchor.constraint(equalTo: favouriteLabel.trailingAnchor,constant: 5),
             favouriteButton.centerYAnchor.constraint(equalTo: favouriteLabel.centerYAnchor),
            
-            
-            
-            
-            
-        
-        
         ])
     }
     override func viewWillAppear(_ animated: Bool) {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1130BE2AD86FC60050F12E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1130BD2AD86FC60050F12E /* SearchViewController.swift */; };
+		1E1130C02AD86FD30050F12E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1130BF2AD86FD30050F12E /* SearchViewModel.swift */; };
+		1E1130C22AD871450050F12E /* SearchNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1130C12AD871450050F12E /* SearchNewsTableViewCell.swift */; };
 		1E1244AA29CA77550031B121 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1244A929CA77550031B121 /* SDWebImage */; };
 		1E1244AC29CA77550031B121 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1244AB29CA77550031B121 /* SDWebImageMapKit */; };
 		1E14A8612AD774E000AC7518 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E14A85F2AD774E000AC7518 /* CoreData.xcdatamodeld */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E1130BD2AD86FC60050F12E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1E1130BF2AD86FD30050F12E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1E1130C12AD871450050F12E /* SearchNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsTableViewCell.swift; sourceTree = "<group>"; };
 		1E14A8602AD774E000AC7518 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		1E14A8622AD775C400AC7518 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1E3525FC28F4DB06001491F6 /* infoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
@@ -115,9 +121,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1E1130BC2AD86FB20050F12E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1E1130BD2AD86FC60050F12E /* SearchViewController.swift */,
+				1E1130BF2AD86FD30050F12E /* SearchViewModel.swift */,
+				1E1130C12AD871450050F12E /* SearchNewsTableViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		1E1244AD29CA7A610031B121 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1E1130BC2AD86FB20050F12E /* Search */,
 				1EDA83B02AD6227B00603232 /* Storage */,
 				1EDA83AB2AD60F4100603232 /* Favourite */,
 				1EDA83A62AD60DD900603232 /* Tab */,
@@ -426,16 +443,19 @@
 				1EFE116728F34186002C0CC1 /* NewsModel.swift in Sources */,
 				1E14A8612AD774E000AC7518 /* CoreData.xcdatamodeld in Sources */,
 				1E14A8632AD775C400AC7518 /* CoreDataManager.swift in Sources */,
+				1E1130C22AD871450050F12E /* SearchNewsTableViewCell.swift in Sources */,
 				1EDA83B42AD6237E00603232 /* FavouriteViewModel.swift in Sources */,
 				1EDA83A82AD60DF000603232 /* TabBarController.swift in Sources */,
 				1ED6CDD3296B65B100B664DB /* MyNewsModel.swift in Sources */,
 				1ED6CDD5296B727D00B664DB /* InfoViewModel.swift in Sources */,
 				1EFE114D28F301A5002C0CC1 /* NewsViewController.swift in Sources */,
 				1EFE114928F301A5002C0CC1 /* AppDelegate.swift in Sources */,
+				1E1130BE2AD86FC60050F12E /* SearchViewController.swift in Sources */,
 				1EFE116128F33B0C002C0CC1 /* NewsTableViewCell.swift in Sources */,
 				1EFE116428F33F56002C0CC1 /* APICaller.swift in Sources */,
 				1E3525FD28F4DB06001491F6 /* infoViewController.swift in Sources */,
 				1ED6CDD1296B61D500B664DB /* NewsViewModel.swift in Sources */,
+				1E1130C02AD86FD30050F12E /* SearchViewModel.swift in Sources */,
 				1E7D6890296658B300C6C6B8 /* MainCoordinator.swift in Sources */,
 				1EDA83B62AD6264B00603232 /* FavouriteNewsModel.swift in Sources */,
 				1EDA83AD2AD60F6900603232 /* FavouriteViewController.swift in Sources */,
