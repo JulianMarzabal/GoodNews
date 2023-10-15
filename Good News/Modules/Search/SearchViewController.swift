@@ -20,19 +20,18 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    private lazy  var searchController: UISearchController = {
+    private lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: SearchResultsViewController(viewModel: viewModel))
-    
-        search.searchBar.placeholder = "Search News"
-        search.searchBar.inputViewController?.definesPresentationContext = true
-        //search.searchBar.backgroundColor = .white
-        search.searchBar.tintColor = .black
-        search.searchBar.barStyle = .black
         search.searchBar.searchTextField.textColor = .black
+        search.searchBar.searchTextField.backgroundColor = .clear
+        search.searchBar.placeholder = "Search News"
+        search.searchBar.tintColor = .black
+        search.searchBar.inputViewController?.definesPresentationContext = true
+        search.searchBar.barStyle = .black
+        search.searchBar.backgroundImage = UIImage()
         search.searchBar.sizeToFit()
-        search.resignFirstResponder()
         search.definesPresentationContext = true
-        
+        search.searchBar.backgroundColor = .clear
         
         return search
     }()
@@ -41,7 +40,7 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         tableView.register(SearchItemTableViewCell.self, forCellReuseIdentifier: SearchItemTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .black
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
     
@@ -58,12 +57,14 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
        
     }
     func setupUI() {
+        title = "Search news"
         view.backgroundColor = .white
         view.addSubview(tableView)
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
         tableView.backgroundColor = .white
         setupContraints()
+     
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -103,6 +104,8 @@ extension SearchResultsViewController:UITableViewDelegate,UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier:SearchItemTableViewCell.identifier ,for: indexPath) as? SearchItemTableViewCell else {
             return UITableViewCell()
         }
+        let news = viewModel.searchModel[indexPath.row]
+        cell.configure(with: news)
         
         return cell
         
@@ -110,10 +113,10 @@ extension SearchResultsViewController:UITableViewDelegate,UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.searchModel.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 140
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
@@ -132,6 +135,7 @@ extension SearchResultsViewController: UISearchResultsUpdating {
             return
         }
         viewModel.text = text
+        print(text)
    
     }
 }

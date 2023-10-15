@@ -31,7 +31,7 @@ class FavouriteViewController: UIViewController {
     }()
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "News Favourite"
+        label.text = "Favourite News"
        
         label.backgroundColor = .systemGray6
         label.font = .systemFont(ofSize: 24)

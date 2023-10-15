@@ -15,6 +15,7 @@ struct Constants {
 }
 protocol APIProtocol{
     func getNews(completion: @escaping (Result<[News],Error>) -> Void)
+    func searchNews(query:String,completion:@escaping (Result<[News],Error>) -> Void) 
     
 }
 
@@ -48,6 +49,26 @@ class APICaller:APIProtocol {
                 
         
         
+        
+    }
+    
+    func searchNews(query:String,completion:@escaping (Result<[News],Error>) -> Void) {
+       guard let url = URL(string: "\(Constants.BaseUrl)/v2/everything?q=\(query)&apiKey=\(Constants.APIKey)") else {return}
+        let request = AF.request(url)
+        request.responseData { response in
+            guard let data = response.data else {
+                return
+            }
+            let decoder = JSONDecoder()
+            do {
+                let response = try decoder.decode(NewsResponse.self, from: data)
+                completion(.success(response.articles))
+                
+                print("Search News")
+            } catch {
+                completion(.failure(error))
+            }
+        }
         
     }
 }

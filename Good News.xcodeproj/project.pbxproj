@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E02E0092ADCADB700BFA0A8 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E02E0082ADCADB700BFA0A8 /* SearchModel.swift */; };
 		1E1130BE2AD86FC60050F12E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1130BD2AD86FC60050F12E /* SearchViewController.swift */; };
 		1E1130C02AD86FD30050F12E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1130BF2AD86FD30050F12E /* SearchViewModel.swift */; };
 		1E1130C22AD871450050F12E /* SearchNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1130C12AD871450050F12E /* SearchNewsTableViewCell.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E02E0082ADCADB700BFA0A8 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		1E1130BD2AD86FC60050F12E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1E1130BF2AD86FD30050F12E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1E1130C12AD871450050F12E /* SearchNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				1E1130BD2AD86FC60050F12E /* SearchViewController.swift */,
 				1E1130BF2AD86FD30050F12E /* SearchViewModel.swift */,
 				1E1130C12AD871450050F12E /* SearchNewsTableViewCell.swift */,
+				1E02E0082ADCADB700BFA0A8 /* SearchModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				1EFE114D28F301A5002C0CC1 /* NewsViewController.swift in Sources */,
 				1EFE114928F301A5002C0CC1 /* AppDelegate.swift in Sources */,
 				1E1130BE2AD86FC60050F12E /* SearchViewController.swift in Sources */,
+				1E02E0092ADCADB700BFA0A8 /* SearchModel.swift in Sources */,
 				1EFE116128F33B0C002C0CC1 /* NewsTableViewCell.swift in Sources */,
 				1EFE116428F33F56002C0CC1 /* APICaller.swift in Sources */,
 				1E3525FD28F4DB06001491F6 /* infoViewController.swift in Sources */,

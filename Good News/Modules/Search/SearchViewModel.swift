@@ -15,6 +15,8 @@ class SearchResultViewModel{
     
     var api:APIProtocol = APICaller.shared
     weak var delegate: SearchViewDelegate?
+    var news:[News] = [News]()
+    var searchModel:[SearchModel] = []
    
     var onSuccessfullUpdateReaction:  (() -> Void)?
     public var text: String = ""{
@@ -28,14 +30,33 @@ class SearchResultViewModel{
     
     
     func searchItemResult(){
-        
+        api.searchNews(query: text) { [weak self] results in
+            switch results {
+            case .success(let searchNews):
+                self?.news = searchNews
+                self?.createModel()
+                self?.onSuccessfullUpdateReaction?()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
        
         
     }
  
     func updateViewModel() {
-       
+       createModel()
         onSuccessfullUpdateReaction?()
+    }
+    
+    func createModel() {
+        searchModel = []
+        for i in news {
+            searchModel.append(.init(title: i.title, description: i.description, content: i.content, image: i.urlToImage ?? ""))
+        
+        }
+       
     }
     
     
