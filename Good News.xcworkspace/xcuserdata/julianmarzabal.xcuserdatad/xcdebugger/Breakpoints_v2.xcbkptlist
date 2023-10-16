@@ -81,7 +81,86 @@
                   endingLineNumber = "43"
                   offsetFromSymbolStart = "392">
                </Location>
+               <Location
+                  uuid = "17D483AD-FFB3-4554-A632-FD5DB62AA9A7 - 711251c2a70e3ce8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.CoreDataManager.SaveNews(news: Good_News.News) -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/Storage/CoreDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "928">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F11F4E31-16DE-4F08-8D42-53D4F41008C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Modules/News/NewsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getNews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F11F4E31-16DE-4F08-8D42-53D4F41008C2 - 5f188f8cb6b3e9b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.NewsViewModel.getNews() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/News/NewsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "F11F4E31-16DE-4F08-8D42-53D4F41008C2 - b72121d244716499"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Good_News.News&gt;, Swift.Error&gt;) -&gt; () in Good_News.NewsViewModel.getNews() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/News/NewsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B7D8D1C-09BF-4BA2-AFC5-2ACF9D1F204A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Modules/News/NewsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getNews()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

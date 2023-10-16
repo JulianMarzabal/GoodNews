@@ -13,22 +13,16 @@ class NewsTableViewCell: UITableViewCell {
     
     
     
-     private var  titleNews: UILabel = {
+     private lazy var  titleNews: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        
-         label.numberOfLines = 0
-       
-    
-        
-         label.text = ""
-    
-        
+        label.numberOfLines = 0
+        label.text = ""
         return label
     }()
     
-    private var descriptionNews: UILabel = {
+    private lazy  var descriptionNews: UILabel = {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +32,7 @@ class NewsTableViewCell: UITableViewCell {
         
         return label
     }()
-    private var separator:UIView = {
+    private lazy var separator:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .gray

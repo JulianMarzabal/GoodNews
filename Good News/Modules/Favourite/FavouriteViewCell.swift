@@ -19,7 +19,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
     static let identifier = "FavouriteMovieTableViewCell"
     private var title: String?
 
-     var favouriteLabel: UILabel = {
+     private lazy var favouriteLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
          label.font = .systemFont(ofSize: 18)
@@ -27,7 +27,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    var descriptionLabel: UILabel = {
+   private lazy var descriptionLabel: UILabel = {
        let label = UILabel()
        label.numberOfLines = 0
        label.text = ""
@@ -35,7 +35,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
    }()
-    private var separator:UIView = {
+    private lazy var separator:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemRed
@@ -56,9 +56,6 @@ class FavouriteNewsTableViewCell: UITableViewCell {
         contentView.addSubview(separator)
         setConstrainsts()
    
-       
-      
-    
     }
   
     func setConstrainsts() {
@@ -75,13 +72,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
             separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         ])
-    }
- 
-   
-    
-   
-    
-    
+    }    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -26,14 +26,10 @@ class InfoViewModel {
     
     
     var onSuccessfulUpdateReaction:  (() -> Void)?
-    
-    
-    
+
     func saveNews(news:News) {
         
         coreData.SaveNews(news: news)
-        print("Se ejecuto este codigo")
-        
         
     }
     func delateNews(entity:Entity){

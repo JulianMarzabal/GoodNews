@@ -21,9 +21,9 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     private lazy var searchController: UISearchController = {
-        let search = UISearchController(searchResultsController: SearchResultsViewController(viewModel: viewModel))
+        let search = UISearchController(searchResultsController:SearchResultsViewController(viewModel: viewModel))
         search.searchBar.searchTextField.textColor = .black
-        search.searchBar.searchTextField.backgroundColor = .clear
+        search.searchBar.searchTextField.backgroundColor = .white
         search.searchBar.placeholder = "Search News"
         search.searchBar.tintColor = .black
         search.searchBar.inputViewController?.definesPresentationContext = true
@@ -53,10 +53,11 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         searchController.searchResultsUpdater = self
         viewModel.searchItemResult()
         bindReaction()
+        viewModel.searchItemResult()
 
        
     }
-    func setupUI() {
+    private func setupUI() {
         title = "Search news"
         view.backgroundColor = .white
         view.addSubview(tableView)
@@ -66,6 +67,8 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         setupContraints()
      
     }
+    
+                                
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         tableView.frame = view.bounds
@@ -73,10 +76,11 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.updateViewModel()
+       // viewModel.updateViewModel()
+        bindReaction()
     }
     
-    func setupContraints() {
+    private func setupContraints() {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -85,17 +89,16 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         ])
     }
     
-    func bindReaction(){
+    private func bindReaction(){
         viewModel.onSuccessfullUpdateReaction = {[weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
-            
-            
+        
         }
     }
     
-
+ 
 
 }
 
@@ -121,22 +124,14 @@ extension SearchResultsViewController:UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
     }
-    
-    
-    
-    
-    
 }
 
 extension SearchResultsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
         guard let text = searchController.searchBar.text?.lowercased().replacingOccurrences(of: " ", with: "%20") else {
             return
         }
         viewModel.text = text
-        print(text)
-   
     }
 }
 

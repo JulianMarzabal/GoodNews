@@ -29,7 +29,7 @@ class FavouriteViewController: UIViewController {
       tableView.dataSource = self
         return tableView
     }()
-    private let label: UILabel = {
+    private lazy var  label: UILabel = {
         let label = UILabel()
         label.text = "Favourite News"
        
@@ -85,10 +85,7 @@ class FavouriteViewController: UIViewController {
 }
 extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       //return NewsStorage.shared.news.count
         return viewmodel.newsFavourite.count
-        
-        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -110,34 +107,15 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
     }
-    /*func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) { _,_, completion in
-            let newsToDelete = self.viewmodel.newsFavourite[indexPath.row]
-           // NewsStorage.shared.news.remove(at: indexPath.row)
-            self.viewmodel.eliminateFavouriteNews(entity: newsToDelete)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-           // tableView.reloadData()
-            completion(true)
-        }
-        deleteAction.image = UIImage(systemName: "trash")
-        deleteAction.backgroundColor = .systemRed
-        
-        let config = UISwipeActionsConfiguration(actions: [deleteAction])
-        return config
-    }*/
+
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let newsEntityToDelete = self.viewmodel.newsFavourite[indexPath.row]
         self.viewmodel.eliminateFavouriteNews(entity: newsEntityToDelete)
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             guard let self = self else { return }
-            
-            
-            
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            //tableView.reloadData()
             completion(true)
         }
-        
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.backgroundColor = .systemRed
         

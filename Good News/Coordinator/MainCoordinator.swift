@@ -35,9 +35,6 @@ class MainCoordinator {
 
 }
 
-
-
-
 extension MainCoordinator: NewsViewDelegate {
     func showInfoNews(news: News) {
         
@@ -45,7 +42,6 @@ extension MainCoordinator: NewsViewDelegate {
       
         
     }
-    
 
 }
 

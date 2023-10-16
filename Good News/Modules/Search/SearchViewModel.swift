@@ -41,8 +41,6 @@ class SearchResultViewModel{
                 print(error)
             }
         }
-       
-        
     }
  
     func updateViewModel() {

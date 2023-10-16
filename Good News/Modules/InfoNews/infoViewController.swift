@@ -88,11 +88,8 @@ class infoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         setContraints()
-    
-
     }
     
     func setupUI(){

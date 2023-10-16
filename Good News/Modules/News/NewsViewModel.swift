@@ -25,12 +25,13 @@ class NewsViewModel {
                 self?.updateViewModel()
                
             case .failure(let error):
+                print("que pasoo")
                 print(error)
             }
         }
     }
     
-    func createViewModel() {
+    private func createViewModel() {
         newsViewModel = []
         for peaceOfNews in news {
             newsViewModel.append(.init(title: peaceOfNews.title, description: peaceOfNews.description, content: peaceOfNews.content, image: peaceOfNews.urlToImage ?? ""))
@@ -42,7 +43,7 @@ class NewsViewModel {
         onSuccessfulUpdateReaction?()
     }
     
-    func selectNewsBy(index: Int){
+     func selectNewsBy(index: Int){
         guard index < news.count else {return}
    
         delegate?.showInfoNews(news: news[index])

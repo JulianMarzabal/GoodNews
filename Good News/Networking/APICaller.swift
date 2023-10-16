@@ -36,19 +36,14 @@ class APICaller:APIProtocol {
             do {
                 let response = try decoder.decode(NewsResponse.self, from: data)
                 completion(.success(response.articles))
-                print("status 200")
-                
             }
             catch{
                 completion(.failure(error))
             }
-            
-        
+
             
         }
-                
-        
-        
+   
         
     }
     
@@ -64,7 +59,6 @@ class APICaller:APIProtocol {
                 let response = try decoder.decode(NewsResponse.self, from: data)
                 completion(.success(response.articles))
                 
-                print("Search News")
             } catch {
                 completion(.failure(error))
             }

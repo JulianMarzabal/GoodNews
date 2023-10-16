@@ -51,14 +51,9 @@ class TabBarViewController: UITabBarController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
-       
-        
-        
-        
+ 
     }
-    
-
-
+   
 }
     
 extension TabBarViewController: NewsViewDelegate {
