@@ -16,12 +16,6 @@
 		1E14A8612AD774E000AC7518 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E14A85F2AD774E000AC7518 /* CoreData.xcdatamodeld */; };
 		1E14A8632AD775C400AC7518 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14A8622AD775C400AC7518 /* CoreDataManager.swift */; };
 		1E3525FD28F4DB06001491F6 /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3525FC28F4DB06001491F6 /* infoViewController.swift */; };
-		1E451E2A29D26D9800BAC231 /* NewsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E451E2929D26D9800BAC231 /* NewsViewModelTests.swift */; };
-		1E451E3129D26E7300BAC231 /* NewsViewDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E451E3029D26E7300BAC231 /* NewsViewDelegateMock.swift */; };
-		1E451E3329D2714200BAC231 /* APIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E451E3229D2714200BAC231 /* APIMock.swift */; };
-		1E4DDF0629D39CBF007D1A49 /* MainCoordinatotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4DDF0529D39CBF007D1A49 /* MainCoordinatotTest.swift */; };
-		1E4DDF0929D39D0D007D1A49 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4DDF0829D39D0D007D1A49 /* NavigationControllerMock.swift */; };
-		1E4DDF0B29D3A16A007D1A49 /* NewsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4DDF0A29D3A16A007D1A49 /* NewsViewControllerTest.swift */; };
 		1E7D6890296658B300C6C6B8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D688F296658B300C6C6B8 /* MainCoordinator.swift */; };
 		1ED6CDD1296B61D500B664DB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6CDD0296B61D500B664DB /* NewsViewModel.swift */; };
 		1ED6CDD3296B65B100B664DB /* MyNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6CDD2296B65B100B664DB /* MyNewsModel.swift */; };
@@ -62,12 +56,6 @@
 		1E14A8622AD775C400AC7518 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1E3525FC28F4DB06001491F6 /* infoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
 		1E451E2729D26D9800BAC231 /* Good NewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Good NewsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E451E2929D26D9800BAC231 /* NewsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelTests.swift; sourceTree = "<group>"; };
-		1E451E3029D26E7300BAC231 /* NewsViewDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewDelegateMock.swift; sourceTree = "<group>"; };
-		1E451E3229D2714200BAC231 /* APIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMock.swift; sourceTree = "<group>"; };
-		1E4DDF0529D39CBF007D1A49 /* MainCoordinatotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatotTest.swift; sourceTree = "<group>"; };
-		1E4DDF0829D39D0D007D1A49 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
-		1E4DDF0A29D3A16A007D1A49 /* NewsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewControllerTest.swift; sourceTree = "<group>"; };
 		1E7D688F296658B300C6C6B8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		1ED6CDD0296B61D500B664DB /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		1ED6CDD2296B65B100B664DB /* MyNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsModel.swift; sourceTree = "<group>"; };
@@ -168,27 +156,6 @@
 			path = InfoNews;
 			sourceTree = "<group>";
 		};
-		1E451E2829D26D9800BAC231 /* Good NewsTests */ = {
-			isa = PBXGroup;
-			children = (
-				1E4DDF0729D39CEF007D1A49 /* Mocks */,
-				1E451E2929D26D9800BAC231 /* NewsViewModelTests.swift */,
-				1E451E3229D2714200BAC231 /* APIMock.swift */,
-				1E4DDF0529D39CBF007D1A49 /* MainCoordinatotTest.swift */,
-				1E4DDF0A29D3A16A007D1A49 /* NewsViewControllerTest.swift */,
-			);
-			path = "Good NewsTests";
-			sourceTree = "<group>";
-		};
-		1E4DDF0729D39CEF007D1A49 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				1E451E3029D26E7300BAC231 /* NewsViewDelegateMock.swift */,
-				1E4DDF0829D39D0D007D1A49 /* NavigationControllerMock.swift */,
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
 		1E7D688E296658A200C6C6B8 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				1EFE114728F301A5002C0CC1 /* Good News */,
-				1E451E2829D26D9800BAC231 /* Good NewsTests */,
 				1EFE114628F301A5002C0CC1 /* Products */,
 				14BDF853308556753E80792A /* Pods */,
 				3FA47CFBF630FED6B2CF4B26 /* Frameworks */,
@@ -429,12 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E451E3329D2714200BAC231 /* APIMock.swift in Sources */,
-				1E451E3129D26E7300BAC231 /* NewsViewDelegateMock.swift in Sources */,
-				1E4DDF0929D39D0D007D1A49 /* NavigationControllerMock.swift in Sources */,
-				1E4DDF0B29D3A16A007D1A49 /* NewsViewControllerTest.swift in Sources */,
-				1E451E2A29D26D9800BAC231 /* NewsViewModelTests.swift in Sources */,
-				1E4DDF0629D39CBF007D1A49 /* MainCoordinatotTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
