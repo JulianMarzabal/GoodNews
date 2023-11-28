@@ -7,27 +7,20 @@
 import SDWebImage
 import UIKit
 
-
-protocol infoViewControllerDelegate: AnyObject {
+protocol InfoViewControllerDelegate: AnyObject {
     func onView()
     func onSelect(model: FavouriteNewsModel, isSelectected: Bool)
 }
-
-class infoViewController: UIViewController {
-    weak var delegate: infoViewControllerDelegate?
+class InfoViewController: UIViewController {
+    weak var delegate: InfoViewControllerDelegate?
     var viewModel: InfoViewModel
-    init(viewModel: InfoViewModel){
+    init(viewModel: InfoViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-
-   
-    
     private lazy var titleNews: UILabel = {
         let label = UILabel()
         label.text = viewModel.news.title
@@ -37,7 +30,6 @@ class infoViewController: UIViewController {
         label.textColor = .black
         return label
     }()
-    
     lazy var label: UILabel = {
         let label = UILabel()
         label.text = viewModel.news.description
@@ -47,7 +39,6 @@ class infoViewController: UIViewController {
         label.backgroundColor = .systemGray6
         label.contentMode = .scaleAspectFit
         label.textColor = .black
-        
         return label
     }()
     lazy var imageView: UIImageView = {
@@ -56,20 +47,15 @@ class infoViewController: UIViewController {
         imageView.image = image
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         return imageView
     }()
-    
     lazy var favouriteButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(systemName: "star.fill",withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
-        
+        let image = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         button.setImage(image, for: .normal)
         button.tintColor = .black
         button.addTarget(self, action: #selector(saveNews), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
     lazy var favouriteLabel: UILabel = {
@@ -81,18 +67,14 @@ class infoViewController: UIViewController {
         label.backgroundColor = .systemGray6
         label.contentMode = .scaleAspectFit
         label.textColor = .black
-        
         return label
     }()
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setContraints()
     }
-    
-    func setupUI(){
+    func setupUI() {
         setImage()
         view.backgroundColor = .systemGray6
         view.addSubview(label)
@@ -100,48 +82,34 @@ class infoViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(favouriteLabel)
         view.addSubview(favouriteButton)
-        
     }
-    
     @objc func saveNews() {
         let newsFavourite = viewModel.news
-       
-
-           viewModel.isSelected.toggle()
-           favouriteButton.tintColor = viewModel.isSelected ? .systemYellow : .black
+        viewModel.isSelected.toggle()
+        favouriteButton.tintColor = viewModel.isSelected ? .systemYellow : .black
         if viewModel.isSelected {
             viewModel.saveNews(news: newsFavourite)
         } else {
             print("eliminar new de core Data")
         }
-        
     }
-    
-    private func setContraints(){
+    private func setContraints() {
         NSLayoutConstraint.activate([
-          
             titleNews.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            titleNews.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 5),
+            titleNews.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             titleNews.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            imageView.topAnchor.constraint(equalTo: titleNews.bottomAnchor,constant: 70),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 30),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -30),
+            imageView.topAnchor.constraint(equalTo: titleNews.bottomAnchor, constant: 70),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             imageView.heightAnchor.constraint(equalToConstant: 200),
             imageView.widthAnchor.constraint(equalToConstant: 150),
-            
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
             favouriteLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
             favouriteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-
-            
-           // favouriteButton.topAnchor.constraint(equalTo: favouriteLabel.topAnchor),
-            favouriteButton.leadingAnchor.constraint(equalTo: favouriteLabel.trailingAnchor,constant: 5),
-            favouriteButton.centerYAnchor.constraint(equalTo: favouriteLabel.centerYAnchor),
-           
+            favouriteButton.leadingAnchor.constraint(equalTo: favouriteLabel.trailingAnchor, constant: 5),
+            favouriteButton.centerYAnchor.constraint(equalTo: favouriteLabel.centerYAnchor)
         ])
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -150,17 +118,11 @@ class infoViewController: UIViewController {
         viewModel.onSuccessfulUpdateReaction = { [weak self] in
             DispatchQueue.main.async {
                 self?.setupUI()
-               
             }
-            
-        
         }
     }
     func setImage() {
         guard let url = URL(string: viewModel.news.urlToImage ?? "") else {return}
         imageView.sd_setImage(with: url)
     }
-    
-
-
 }

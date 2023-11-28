@@ -23,7 +23,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 // MARK: Protocols
 
 /// The type to which all data response serializers must conform in order to serialize a response.

@@ -26,7 +26,7 @@
 
 import Foundation
 import SystemConfiguration
-
+// swiftlint:disable all
 /// The `NetworkReachabilityManager` class listens for reachability changes of hosts and addresses for both cellular and
 /// WiFi network interfaces.
 ///

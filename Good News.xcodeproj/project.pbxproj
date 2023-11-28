@@ -273,6 +273,7 @@
 				1EFE114228F301A5002C0CC1 /* Frameworks */,
 				1EFE114328F301A5002C0CC1 /* Resources */,
 				1CDE66522262AAEAA76D4AC8 /* [CP] Embed Pods Frameworks */,
+				1E0E9F932B1675C300C6EB5D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -365,6 +366,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Good News/Pods-Good News-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1E0E9F932B1675C300C6EB5D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		DABBE63594BE02F5D3F80388 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

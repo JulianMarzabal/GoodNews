@@ -23,7 +23,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 /// Responsible for managing the mapping of `ServerTrustEvaluating` values to given hosts.
 open class ServerTrustManager {
     /// Determines whether all hosts for this `ServerTrustManager` must be evaluated. `true` by default.

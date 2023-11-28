@@ -6,48 +6,32 @@
 //
 
 import Foundation
-
-
 class InfoViewModel {
-    var news:News
+    var news: News
     private let coreData = CoreDataManager.shared
     private let storage = NewsStorage.shared
     init(news: News) {
         self.news = news
-        
-    
     }
-    
     var isSelected: Bool = false {
         didSet {
-            //storage.isSelected = isSelected
         }
     }
-    
-    
-    var onSuccessfulUpdateReaction:  (() -> Void)?
+    var onSuccessfulUpdateReaction: (() -> Void)?
 
-    func saveNews(news:News) {
-        
-        coreData.SaveNews(news: news)
-        
+    func saveNews(news: News) {
+        coreData.saveNews(news: news)
     }
-    func delateNews(entity:Entity){
+    func delateNews(entity: Entity) {
         isSelected = false
         coreData.deleteNews(entity: entity)
-        
     }
-    
     func setInitialSelectedState() {
         let object = coreData.fetchData()?.first(where: { news in
             news.title == news.title
-            
         })
-        var isTitleFirstWordEqual = object?.title?.split(separator: " ").first == news.title.split(separator: " ").first
+        let isTitleFirstWordEqual = object?.title?.split(separator: " ").first == news.title.split(separator: " ").first
         print(isTitleFirstWordEqual)
         print("--´-´-´-´-´-")
-       
-        
     }
-    
 }

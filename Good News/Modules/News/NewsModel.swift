@@ -17,4 +17,3 @@ struct News: Decodable {
     let urlToImage: String?
     let content: String?
 }
-

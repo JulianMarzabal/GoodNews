@@ -6,30 +6,21 @@
 //
 
 import Foundation
-import Foundation
-protocol SearchViewDelegate:AnyObject {
+protocol SearchViewDelegate: AnyObject {
     func toDescription()
 }
-
-class SearchResultViewModel{
-    
-    var api:APIProtocol = APICaller.shared
+class SearchResultViewModel {
+    var api: APIProtocol = APICaller.shared
     weak var delegate: SearchViewDelegate?
-    var news:[News] = [News]()
-    var searchModel:[SearchModel] = []
-   
-    var onSuccessfullUpdateReaction:  (() -> Void)?
+    var news: [News] = [News]()
+    var searchModel: [SearchModel] = []
+    var onSuccessfullUpdateReaction: (() -> Void)?
     public var text: String = ""{
-        didSet{
+        didSet {
             self.searchItemResult()
         }
     }
-    
-   
-    
-    
-    
-    func searchItemResult(){
+    func searchItemResult() {
         guard !text.isEmpty else {return}
         api.searchNews(query: text) { [weak self] results in
             switch results {
@@ -37,32 +28,19 @@ class SearchResultViewModel{
                 self?.news = searchNews
                 self?.createModel()
                 self?.onSuccessfullUpdateReaction?()
-                
             case .failure(let error):
                 print(error)
             }
         }
     }
- 
     func updateViewModel() {
        createModel()
         onSuccessfullUpdateReaction?()
     }
-    
     func createModel() {
         searchModel = []
-        for i in news {
-            searchModel.append(.init(title: i.title, description: i.description, content: i.content, image: i.urlToImage ?? ""))
-        
+        for peaceOfNews in news {
+            searchModel.append(.init(title: peaceOfNews.title, description: peaceOfNews.description, content: peaceOfNews.content, image: peaceOfNews.urlToImage ?? ""))
         }
-       
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

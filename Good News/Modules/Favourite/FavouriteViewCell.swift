@@ -14,8 +14,6 @@ struct FavouriteNewsTableViewModel {
 }
 
 class FavouriteNewsTableViewCell: UITableViewCell {
-   // var favouriteMovies = MoviesStorage.shared.movies
-
     static let identifier = "FavouriteMovieTableViewCell"
     private var title: String?
 
@@ -35,36 +33,30 @@ class FavouriteNewsTableViewCell: UITableViewCell {
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
    }()
-    private lazy var separator:UIView = {
+    private lazy var separator: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemRed
         view.heightAnchor.constraint(equalToConstant: 2).isActive = true
         return view
     }()
-    
-    func configure(data: FavouriteNewsTableViewModel){
+    func configure(data: FavouriteNewsTableViewModel) {
         favouriteLabel.text = data.title
         descriptionLabel.text = data.description
     }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(favouriteLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(separator)
         setConstrainsts()
-   
     }
-  
     func setConstrainsts() {
         NSLayoutConstraint.activate([
             favouriteLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            favouriteLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
-            favouriteLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 15),
-            favouriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -15),
-            
+            favouriteLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            favouriteLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            favouriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor ,constant: -15),
             descriptionLabel.topAnchor.constraint(equalTo: favouriteLabel.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
@@ -72,9 +64,8 @@ class FavouriteNewsTableViewCell: UITableViewCell {
             separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         ])
-    }    
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

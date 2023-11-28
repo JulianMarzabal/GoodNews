@@ -8,9 +8,7 @@
 import Foundation
 import UIKit
 class SearchItemTableViewCell: UITableViewCell {
-    
     static let identifier = "SearchItemTableViewCell"
-
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -30,16 +28,13 @@ class SearchItemTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    lazy var separator:UIView = {
+    lazy var separator: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemYellow
         view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return view
     }()
-    
-   
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier  )
         

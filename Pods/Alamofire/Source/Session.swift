@@ -23,7 +23,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 /// `Session` creates and manages Alamofire's `Request` types during their lifetimes. It also provides common
 /// functionality for all `Request`s, including queuing, interception, trust management, redirect handling, and response
 /// cache handling.

@@ -23,7 +23,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 /// An object that encodes instances into URL-encoded query strings.
 ///
 /// There is no published specification for how to encode collection types. By default, the convention of appending
