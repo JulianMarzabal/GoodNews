@@ -274,6 +274,7 @@
 				1EFE114328F301A5002C0CC1 /* Resources */,
 				1CDE66522262AAEAA76D4AC8 /* [CP] Embed Pods Frameworks */,
 				1E0E9F932B1675C300C6EB5D /* SwiftLint */,
+				1E0E9F942B1686E200C6EB5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -384,6 +385,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		1E0E9F942B1686E200C6EB5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		DABBE63594BE02F5D3F80388 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

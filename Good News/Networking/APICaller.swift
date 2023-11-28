@@ -13,6 +13,7 @@ enum NewsError: Error {
     case badURL
     case badResponse
     case decodingError(Error)
+    case coreDataError(Error)
 }
 
 enum RequestSettings {
@@ -51,7 +52,7 @@ class APICaller: APIProtocol {
     func makeBasicRequest<T: Decodable>(settings: RequestSettings, onSuccess: @escaping(T) -> Void, onError: @escaping (Error) -> Void) {
         guard let url = URL(string: "\(settings.fullURL)") else {return }
         let request = AF.request(url)
-        request.responseData() { response in
+        request.responseData { response in
             guard let data = response.data else {
                 return
             }
@@ -71,7 +72,7 @@ class APICaller: APIProtocol {
                 completion(.failure(error))
             })
     }
-    func searchNews(query: String, completion: @escaping (Result<[News],Error>) -> Void) {
+    func searchNews(query: String, completion: @escaping (Result<[News], Error>) -> Void) {
         makeBasicRequest(settings: .searchNews(query: query), onSuccess: {(response: NewsResponse) in
             completion(.success(response.articles))}, onError: {error in
                 completion(.failure(error))})

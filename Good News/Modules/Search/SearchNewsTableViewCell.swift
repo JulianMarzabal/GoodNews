@@ -37,44 +37,30 @@ class SearchItemTableViewCell: UITableViewCell {
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier  )
-        
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(separator)
         contentView.backgroundColor = .white
         setContraints()
-    
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     func setContraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
-            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -15),
-            
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
-            
             separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             separator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-            
-           
-            
-            
         ])
-   
     }
     func configure(with data: SearchModel) {
         titleLabel.text = data.title
         descriptionLabel.text = data.description
     }
-    
-    
-    
-
 }

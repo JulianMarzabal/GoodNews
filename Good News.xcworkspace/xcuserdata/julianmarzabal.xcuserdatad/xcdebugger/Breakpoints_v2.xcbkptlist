@@ -182,54 +182,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AFB594FE-9BB6-4CC7-B923-496AF26A218D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Good News/Modules/Search/SearchViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AFB594FE-9BB6-4CC7-B923-496AF26A218D - 19701e1edae99a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Good_News.SearchResultsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Good News"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/Search/SearchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "324">
-               </Location>
-               <Location
-                  uuid = "AFB594FE-9BB6-4CC7-B923-496AF26A218D - 19701e1edae9941"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Good_News.SearchResultsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Good News"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/Search/SearchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "320">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AD574692-33DD-48C5-81B6-A6EB26B0C00D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -237,8 +189,8 @@
             filePath = "Good News/Networking/APICaller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "getNews(completion:)"
             landmarkType = "7">
             <Locations>
@@ -300,8 +252,8 @@
             filePath = "Good News/Networking/APICaller.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "makeBasicRequest(settings:onSuccess:onError:)"
             landmarkType = "7">
             <Locations>

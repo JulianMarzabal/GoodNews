@@ -47,13 +47,13 @@ class NewsTableViewCell: UITableViewCell {
         let titleNewsConstraints = [
             titleNews.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             titleNews.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleNews.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
+            titleNews.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15)
         ]
         let descriptionNewsConstraints = [
             descriptionNews.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             descriptionNews.topAnchor.constraint(equalTo: titleNews.bottomAnchor, constant: 3),
             descriptionNews.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
-            descriptionNews.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            descriptionNews.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ]
         let seaparatorConstraints = [
             separator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),

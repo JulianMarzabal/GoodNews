@@ -5,10 +5,9 @@
 //  Created by Julian Marzabal on 10/10/2023.
 //
 
-
 import UIKit
 
-class TabBarViewController: UITabBarController{
+class TabBarViewController: UITabBarController {
     weak var neswVCDelegate: NewsViewDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class TabBarViewController: UITabBarController{
         let nav3 = UINavigationController(rootViewController: vc3)
         nav1.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: "Favourites", image: UIImage(systemName: "star.fill"), tag: 1)
-        nav3.tabBarItem = UITabBarItem(title: "Search", image:UIImage(systemName: "magnifyingglass"), tag: 1)
+        nav3.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         nav1.navigationBar.prefersLargeTitles = true
         nav2.navigationBar.prefersLargeTitles = true
         nav3.navigationBar.prefersLargeTitles = true

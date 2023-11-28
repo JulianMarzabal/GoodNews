@@ -28,7 +28,7 @@ class CoreDataManager {
             return nil
         }
     }
-    func saveNews(news: News) {
+    func saveNews(news: News) throws {
         let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "title == %@", news.title)
         do {
@@ -37,7 +37,7 @@ class CoreDataManager {
                 return
             }
         } catch {
-            print("Error trying to get news: \(error)")
+            throw NewsError.coreDataError(error)
         }
         let newEntity = Entity(context: context)
         newEntity.title = news.title
@@ -48,12 +48,13 @@ class CoreDataManager {
             print("Error")
         }
     }
-    func deleteNews(entity: Entity) {
+    func deleteNews(entity: Entity) throws {
             context.delete(entity)
             do {
                 try context.save()
-            } catch {
-                print("Error trying to elminate core data  \(error)")
+            } catch let error as NSError {
+                throw NewsError.coreDataError(error)
+                
             }
         }
 }

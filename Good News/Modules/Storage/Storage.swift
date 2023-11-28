@@ -8,7 +8,7 @@
 import Foundation
 class NewsStorage {
     static var shared: NewsStorage = NewsStorage()
-    var isSelected:Bool = false
+    var isSelected: Bool = false
     private init() {
         }
 }

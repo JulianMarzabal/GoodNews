@@ -56,7 +56,7 @@ class FavouriteNewsTableViewCell: UITableViewCell {
             favouriteLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             favouriteLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
             favouriteLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            favouriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor ,constant: -15),
+            favouriteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             descriptionLabel.topAnchor.constraint(equalTo: favouriteLabel.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),

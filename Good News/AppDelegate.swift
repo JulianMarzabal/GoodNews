@@ -3,7 +3,6 @@
 //  Good News
 //
 //  Created by Julian Marzabal on 09/10/2022.
-//
 
 import UIKit
 import CoreData
@@ -11,22 +10,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator: MainCoordinator?
-    
-    
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         let window = UIWindow(frame: UIScreen.main.bounds)
         let viewController = UIViewController()
         let navController = UINavigationController(rootViewController: viewController)
         let coordinator = MainCoordinator(navigationController: navController)
-      
         window.makeKeyAndVisible()
         self.window = window
         self.coordinator = coordinator
-        
-        
         return true
     }
 
@@ -45,14 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Error al cargar el modelo de datos: \(error), \(error.userInfo)")
             }
         })
         return container
     }()
-
-
 }
-
