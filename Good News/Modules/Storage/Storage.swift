@@ -11,7 +11,7 @@ class NewsStorage {
    
     var isSelected:Bool = false
     private init() {
-            // Constructor privado para asegurar que no se puedan crear instancias fuera de la clase
+            
         }
         
     

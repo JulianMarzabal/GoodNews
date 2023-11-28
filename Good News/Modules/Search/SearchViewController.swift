@@ -20,18 +20,20 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    private lazy var searchController: UISearchController = {
+     lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController:SearchResultsViewController(viewModel: viewModel))
-        search.searchBar.searchTextField.textColor = .black
-        search.searchBar.searchTextField.backgroundColor = .white
-        search.searchBar.placeholder = "Search News"
-        search.searchBar.tintColor = .black
+        //search.searchBar.searchTextField.textColor = .black
+        //search.searchBar.searchTextField.backgroundColor = .white
+        //search.searchBar.searchTextField.textColor = .black
+        //search.searchBar.barStyle = .black
+        //search.searchBar.placeholder = "Search News"
+        //search.searchBar.tintColor = .black
         search.searchBar.inputViewController?.definesPresentationContext = true
         search.searchBar.barStyle = .black
         search.searchBar.backgroundImage = UIImage()
         search.searchBar.sizeToFit()
         search.definesPresentationContext = true
-        search.searchBar.backgroundColor = .clear
+       // search.searchBar.backgroundColor = .clear
         
         return search
     }()
@@ -42,8 +44,6 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         tableView.dataSource = self
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
-    
         return tableView
     }()
     override func viewDidLoad() {
@@ -51,9 +51,9 @@ class SearchResultsViewController: UIViewController, UISearchBarDelegate {
         setupUI()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
-        viewModel.searchItemResult()
+        
         bindReaction()
-        viewModel.searchItemResult()
+        
 
        
     }
@@ -131,6 +131,7 @@ extension SearchResultsViewController: UISearchResultsUpdating {
         guard let text = searchController.searchBar.text?.lowercased().replacingOccurrences(of: " ", with: "%20") else {
             return
         }
+        
         viewModel.text = text
     }
 }

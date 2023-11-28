@@ -30,6 +30,7 @@ class SearchResultViewModel{
     
     
     func searchItemResult(){
+        guard !text.isEmpty else {return}
         api.searchNews(query: text) { [weak self] results in
             switch results {
             case .success(let searchNews):

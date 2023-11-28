@@ -105,19 +105,17 @@ class infoViewController: UIViewController {
     
     @objc func saveNews() {
         let newsFavourite = viewModel.news
-        //viewModel.saveNews(news: newsFavourite)
+       
 
            viewModel.isSelected.toggle()
            favouriteButton.tintColor = viewModel.isSelected ? .systemYellow : .black
-        if viewModel.isSelected == false {
-            print("eliminar new de core Data")
-        } else {
+        if viewModel.isSelected {
             viewModel.saveNews(news: newsFavourite)
+        } else {
+            print("eliminar new de core Data")
         }
         
     }
-
-         
     
     private func setContraints(){
         NSLayoutConstraint.activate([
@@ -148,9 +146,11 @@ class infoViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.setInitialSelectedState()
         viewModel.onSuccessfulUpdateReaction = { [weak self] in
             DispatchQueue.main.async {
                 self?.setupUI()
+               
             }
             
         

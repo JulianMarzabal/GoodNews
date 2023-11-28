@@ -151,7 +151,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5B7D8D1C-09BF-4BA2-AFC5-2ACF9D1F204A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Good News/Modules/News/NewsViewModel.swift"
@@ -161,6 +161,292 @@
             endingLineNumber = "23"
             landmarkName = "getNews()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D273FC0B-F321-4597-B13E-B8FE79C6DBF4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Modules/InfoNews/InfoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "setInitialSelectedState()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D273FC0B-F321-4597-B13E-B8FE79C6DBF4 - 5a2581066e44954f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.InfoViewModel.setInitialSelectedState() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/InfoNews/InfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "D273FC0B-F321-4597-B13E-B8FE79C6DBF4 - 5a2581066e44954f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.InfoViewModel.setInitialSelectedState() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/InfoNews/InfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "D273FC0B-F321-4597-B13E-B8FE79C6DBF4 - 5a2581066e44954f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.InfoViewModel.setInitialSelectedState() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/InfoNews/InfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F926F3E-26DF-4A08-B0D1-D11FE71EACAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Modules/InfoNews/InfoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setInitialSelectedState()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1F926F3E-26DF-4A08-B0D1-D11FE71EACAA - 5a2581066e449490"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.InfoViewModel.setInitialSelectedState() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/InfoNews/InfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1644">
+               </Location>
+               <Location
+                  uuid = "1F926F3E-26DF-4A08-B0D1-D11FE71EACAA - 5a2581066e449490"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.InfoViewModel.setInitialSelectedState() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/InfoNews/InfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1820">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A5B902E-6250-444B-B268-F9AD99A26B7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Modules/InfoNews/InfoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setInitialSelectedState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFB594FE-9BB6-4CC7-B923-496AF26A218D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Modules/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AFB594FE-9BB6-4CC7-B923-496AF26A218D - 19701e1edae99a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.SearchResultsViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/Search/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  uuid = "AFB594FE-9BB6-4CC7-B923-496AF26A218D - 19701e1edae9941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.SearchResultsViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Modules/Search/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "320">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD574692-33DD-48C5-81B6-A6EB26B0C00D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Networking/APICaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "getNews(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AD574692-33DD-48C5-81B6-A6EB26B0C00D - 36e9134905e29546"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in Good_News.APICaller.searchNews(query: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;Good_News.News&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Networking/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "AD574692-33DD-48C5-81B6-A6EB26B0C00D - bca93d22d2293ba9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.APICaller.getNews(completion: (Swift.Result&lt;Swift.Array&lt;Good_News.News&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Networking/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "AD574692-33DD-48C5-81B6-A6EB26B0C00D - bca93d22d2293ea2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Good_News.APICaller.getNews(completion: (Swift.Result&lt;Swift.Array&lt;Good_News.News&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Networking/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "411620FF-63CD-4684-8800-3FFD8C2174E9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Good News/Networking/APICaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "makeBasicRequest(settings:onSuccess:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "411620FF-63CD-4684-8800-3FFD8C2174E9 - 6113ef0572aacfd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in Good_News.APICaller.makeBasicRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(settings: Good_News.RequestSettings, onSuccess: (&#x3c4;_0_0) -&gt; (), onError: (Swift.Error) -&gt; ()) -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Networking/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "428">
+               </Location>
+               <Location
+                  uuid = "411620FF-63CD-4684-8800-3FFD8C2174E9 - 6113ef0572aacfd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in Good_News.APICaller.makeBasicRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(settings: Good_News.RequestSettings, onSuccess: (&#x3c4;_0_0) -&gt; (), onError: (Swift.Error) -&gt; ()) -&gt; ()"
+                  moduleName = "Good News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julianmarzabal/Desktop/GoodNews/Good%20News/Networking/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1280">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

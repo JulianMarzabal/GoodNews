@@ -61,6 +61,13 @@
             ReferencedContainer = "container:Good News.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "apiKey"
+            value = "700f2779a1fe4850b73f96253534617f"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

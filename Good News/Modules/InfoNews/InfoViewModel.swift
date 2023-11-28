@@ -20,7 +20,7 @@ class InfoViewModel {
     
     var isSelected: Bool = false {
         didSet {
-            storage.isSelected = isSelected
+            //storage.isSelected = isSelected
         }
     }
     
@@ -35,6 +35,18 @@ class InfoViewModel {
     func delateNews(entity:Entity){
         isSelected = false
         coreData.deleteNews(entity: entity)
+        
+    }
+    
+    func setInitialSelectedState() {
+        let object = coreData.fetchData()?.first(where: { news in
+            news.title == news.title
+            
+        })
+        var isTitleFirstWordEqual = object?.title?.split(separator: " ").first == news.title.split(separator: " ").first
+        print(isTitleFirstWordEqual)
+        print("--´-´-´-´-´-")
+       
         
     }
     
